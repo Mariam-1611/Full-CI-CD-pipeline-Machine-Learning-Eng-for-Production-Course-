@@ -1,4 +1,4 @@
-```markdown
+
 # Full CI/CD Pipeline – ML Engineering for Production (Assignment 5)
 
 This project implements a full CI/CD pipeline for a simple machine learning model using GitHub Actions, MLflow, DVC, and Docker. The pipeline trains a classifier, logs metrics to MLflow, validates that accuracy is above a threshold, and only then runs a mock Docker deployment step.
@@ -116,21 +116,22 @@ These screenshots demonstrate that the CI/CD pipeline gates deployment based on 
 ```
 ---
 
-## Project Structure
+## Project structure
+
+```text
 .
-├── .dvc/                     # DVC configuration
+├── .dvc/                 # DVC configuration
 ├── .github/workflows/
-│   └── pipeline.yml         # CI/CD pipeline (GitHub Actions)
-├── data/                    # Dataset (tracked with DVC)
-├── mlruns/                  # MLflow experiment tracking
-├── tests/                   # Unit tests
+│   └── pipeline.yml      # CI/CD pipeline (GitHub Actions)
+├── data/                 # Dataset (tracked with DVC)
+├── mlruns/               # MLflow experiment tracking
+├── tests/                # Unit tests
 ├── .dvcignore
 ├── .gitignore
-├── check_threshold.py       # Model validation logic
-├── Dockerfile               # Container setup
-├── mlflow.db                # MLflow database
-├── model_info.txt           # Saved model metadata
-├── requirements.txt         # Dependencies
-├── train.py                 # Training script
+├── check_threshold.py    # Model validation logic
+├── Dockerfile            # Container setup
+├── mlflow.db             # MLflow database
+├── model_info.txt        # Saved model metadata
+├── requirements.txt      # Dependencies
+├── train.py              # Training script
 └── README.md
-```
