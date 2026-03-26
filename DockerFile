@@ -1,0 +1,21 @@
+# 1. Start with a lightweight Python base
+FROM python:3.10-slim
+
+# 2. Accept the Run ID as a build argument
+ARG RUN_ID
+
+# 3. Set working directory
+WORKDIR /app
+
+# 4. Copy and install requirements
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# 5. Copy your code
+COPY . .
+
+# 6. Simulate downloading the model
+RUN echo "Downloading model for Run ID: ${RUN_ID}"
+
+# 7. Run the app
+CMD ["python", "train.py"]

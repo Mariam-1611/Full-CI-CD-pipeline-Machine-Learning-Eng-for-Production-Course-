@@ -1,4 +1,5 @@
-mlruns/ 
-model_info.txt 
-__pycache__/ 
-mlflow.db 
+mlruns/
+model_info.txt
+mlflow.db
+__pycache__/
+*.pyc
